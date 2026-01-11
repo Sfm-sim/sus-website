@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Effect Button</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #111;
+        }
+
+        button {
+            padding: 20px 40px;
+            font-size: 22px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="playSound()">Click Me</button>
+
+    <audio id="daddyChill" src="daddy-chill.mp3"></audio>
+    <audio id="mmmm" src="mmmm.mp3"></audio>
+
+    <script>
+        function playSound() {
+            const sounds = [
+                document.getElementById("daddyChill"),
+                document.getElementById("mmmm")
+            ];
+
+            const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
+            randomSound.currentTime = 0;
+            randomSound.play();
+        }
+    </script>
+
+</body>
+</html>
